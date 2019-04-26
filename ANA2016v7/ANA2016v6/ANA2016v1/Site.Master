@@ -1,0 +1,92 @@
+﻿<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="Site.master.vb" Inherits="ANA2016v1.SiteMaster" %>
+
+<%@ Import Namespace="ANA2016v1" %>
+<%@ Import Namespace="Microsoft.AspNet.Identity" %>
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<style>
+ul {
+    list-style-type: none;
+    margin: 5px;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+</style>
+    <title>ANA 2016 - <%: Page.Title %></title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+
+        <div class="navbar navbar-default navbar-fixed-top">
+                <div class="navbar-header" style="background:#0096d6">
+                </div>
+                <div class="navbar-collapse collapse" style="background:#0096d6">
+                    <ul class="nav navbar-nav" >
+                        <%--<li><a>ANA 2016 - FGV</a></li>--%>
+                        <li><asp:Image ID="LogoANA2016" runat="server" Height="50px" ImageUrl="~/FIGURAS/LogoANA_opt.png" Width="141px" /></li>
+                        <li><asp:Button ID="cmdBemVindo" runat="server" onclick="click_cmdBemVindo" Text="Minha página" Height="50px" BackColor="#0096d6" ForeColor="White" Font-Size="Small" UseSubmitBehavior="False" BorderStyle="None" Width="120px" />
+                        </li>
+                        <li><asp:Button ID="cmdMeuCadastro" runat="server" onclick="click_cmdMeuCadastro" Text="Meu cadastro" Height="50px" BackColor="#0096d6" ForeColor="White" UseSubmitBehavior="False" BorderStyle="None" Width="120px" Font-Size="Small" />
+                        </li>
+<%--                        <li><asp:Image Height="50px" width="80px" ID="Bandeirinha" runat="server" BorderStyle="None" BorderWidth="0px" /></li>--%>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><asp:Button ID="cmdSair" runat="server" onclick="click_cmdSair" Text="Sair" Height="50px" BackColor="#0096d6" ForeColor="White" Font-Size="Small" UseSubmitBehavior="False" BorderStyle="None" Width="120px" />
+                        </li>
+                    </ul>
+                </div>
+                </div>
+
+
+        <!-- PEDRO -->
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:2px;margin-top:1px;">
+          <!-- Header -->
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy;  <%--Framework Scripts--%>- 2016 FGV Projetos v4.0</p>
+            </footer>
+        </div>
+ </div>
+    </form>
+</body>
+</html>
